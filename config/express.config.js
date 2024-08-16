@@ -20,7 +20,7 @@ const expressConfig = (app, express) => {
       .status(200)
       .json({ status: true, message: "Multi level comment system API" });
   });
-  app.use("/api/v1/users", userRouter(express));
+  app.use("/api/users", userRouter(express));
 
   app.get("*", function (req, res) {
     res.status(404).json({ status: false, message: "Route not found" });

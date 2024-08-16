@@ -4,5 +4,5 @@ const connectionStr =
 
 mongoose
   .connect(connectionStr)
-  .then(() => console.log("Database connection succesful"))
+  .then(() => console.log("Database connection successful"))
   .catch((err) => console.error(err));
