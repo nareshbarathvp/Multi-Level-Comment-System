@@ -1,4 +1,4 @@
-const UserSchema = require("../../DB/models/user");
+const UserSchema = require("../../DB/models/user.model");
 
 async function getUserbyEmail(email) {
   return await UserSchema.findOne({ email }).lean();

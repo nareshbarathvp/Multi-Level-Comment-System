@@ -1,3 +1,4 @@
+const postRouter = require("../src/posts/post.router");
 const userRouter = require("../src/user/user.router");
 require("../DB/index");
 
@@ -21,6 +22,7 @@ const expressConfig = (app, express) => {
       .json({ status: true, message: "Multi level comment system API" });
   });
   app.use("/api/users", userRouter(express));
+  app.use("/api/posts", postRouter(express));
 
   app.get("*", function (req, res) {
     res.status(404).json({ status: false, message: "Route not found" });
