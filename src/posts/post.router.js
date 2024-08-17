@@ -1,4 +1,5 @@
 const { verifyToken } = require("../user/helpers/auth.helper");
+const commentsRouter = require("./comments/comments.router");
 const {
   viewPost,
   postPost,
@@ -26,6 +27,8 @@ const postRouter = (express) => {
     const response = await deletePost(req);
     res.status(response.statusCode).json(response);
   });
+
+  router.use("/", commentsRouter(express));
 
   return router;
 };
